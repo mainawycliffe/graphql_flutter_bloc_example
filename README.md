@@ -1,16 +1,11 @@
-# graphql_flutter_bloc_example
+# A Flutter GraphQL example using "graphql" with "flutter_bloc"
 
-A new Flutter project.
+This example uses [`flutter_bloc`](https://pub.dev/packages/flutter_bloc) package for state management and [`graphql`](https://pub.dev/packages/graphql) package to connect to Githubs GraphQL API to fetch and star/unstar your repositories.
 
-## Getting Started
+## About `graphql` flutter package
 
-This project is a starting point for a Flutter application.
+`graphql` package is the core of `graphql_flutter`, which manages caching, http and websocket clients, query management among others. This allows you to use it with any state management tool of your choice. In fact, `graphql_flutter` package also uses this package under the hood, but just exposes a number of Widgets such `GraphQLProvider`,`CacheProvider`, `Query`, `Mutation` etc for you to use.
 
-A few resources to get you started if this is your first Flutter project:
+I will add complete documentation for this example soon.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This repo, after completion shall be merged as one of the examples inside the `graphql_flutter`.
