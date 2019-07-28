@@ -55,11 +55,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 labelText: 'Number of repositories (default 50)',
               ),
               keyboardType: TextInputType.number,
+              textAlign: TextAlign.center,
               onChanged: (String n) {
                 final reposBloc = BlocProvider.of<MyGithubReposBloc>(context);
                 reposBloc.dispatch(
                     LoadMyRepos(numOfReposToLoad: int.parse(n) ?? 50));
               },
+            ),
+            SizedBox(
+              height: 10,
             ),
             new LoadRepositories(
               bloc: BlocProvider.of<MyGithubReposBloc>(context),
@@ -82,8 +86,14 @@ class LoadRepositories extends StatelessWidget {
       bloc: bloc,
       builder: (BuildContext context, MyGithubReposState state) {
         if (state is ReposLoading) {
-          return Center(
-            child: CircularProgressIndicator(),
+          return Expanded(
+            child: Container(
+              child: Center(
+                child: CircularProgressIndicator(
+                  semanticsLabel: "Loading ...",
+                ),
+              ),
+            ),
           );
         }
 
